@@ -14,7 +14,7 @@ type Props = {
 };
 
 export default function RootLayout(props: Props) {
-  const [messages, setMessages] = useState<unknown>();
+  const [messages, setMessages] = useState();
   async function importMessages(locale: string) {
     try {
       const messages = await import(`../../messages/${locale}.json`);
