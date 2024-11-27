@@ -15,7 +15,7 @@ function Projects() {
         </h1>
         <p className="pt-8 text-lg">{t("Projects description")}</p>
       </div>
-      <div className="flex gap-14 flex-wrap px-5">
+      <div className="flex gap-14 flex-wrap w-full px-5">
         <div className="transform transition duration-300 hover:scale-110 rounded-lg h-[30rem] sm:h-96 w-64 bg-secondary hover:shadow-none shadow-[0px_0px_8px_10px_rgba(75,195,109,0.45)] hover:-rotate-0  -rotate-12">
           <div className="m-2 h-3/6 rounded-lg relative">
             <Image src="/mfscreen.png" fill alt="background" sizes="100%" />
