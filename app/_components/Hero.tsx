@@ -7,8 +7,8 @@ function Hero() {
   const t = useTranslations();
   const pathname = usePathname();
   let currentLng;
-  if (pathname == "/en") currentLng = "cveng.pdf";
-  if (pathname == "/rs") currentLng = "cv.pdf";
+  if (pathname == "/en") currentLng = "Veljko_Rikalovic_CV.pdf";
+  if (pathname == "/rs") currentLng = "Veljko_Rikalovic_CV_SR.pdf";
 
   return (
     <div className="min-h-screen px-20 py-12 mt-20">
