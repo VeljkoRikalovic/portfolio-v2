@@ -1,13 +1,15 @@
 "use client";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import TiltedCard from "./TiltedCard/TiltedCard";
+import ProjectsButton from "./ProjectsButton";
+import ProjectsInfo from "./ProjectsInfo";
 
 function Projects() {
   const t = useTranslations();
   return (
     <div
       id="projects"
-      className="flex flex-col gap-40 min-h-screen px-20 py-12 "
+      className="flex flex-col gap-40 min-h-screen px-20 py-16 "
     >
       <div>
         <h1 className="text-4xl underline underline-offset-8 decoration-secondary ">
@@ -16,159 +18,146 @@ function Projects() {
         <p className="pt-8 text-lg">{t("Projects description")}</p>
       </div>
       <div className="flex gap-14 flex-wrap w-full px-5">
-        <div className="transform transition duration-300 hover:scale-110 rounded-lg h-[30rem] sm:h-96 w-64 bg-secondary hover:shadow-none shadow-[0px_0px_8px_10px_rgba(75,195,109,0.45)] hover:-rotate-0  -rotate-12">
-          <div className="m-2 h-3/6 rounded-lg relative">
-            <Image src="/mfscreen.png" fill alt="background" sizes="100%" />
-          </div>
-
-          <div className="px-5 pt-2 flex flex-col">
-            <h2 className="sm:text-3xl text-xl font-bold">muscleFlex</h2>
-            <p className="dark:text-gray-300">
-              <span className="font-semibold">{t("Tech stack")}:</span>{" "}
-              typescript, next js, tailwind, groq AI
-            </p>
-
-            <div className="flex justify-evenly">
-              <a
-                href="https://github.com/VeljkoRikalovic/muscleFlex"
-                target="_blank"
-              >
-                <button
-                  className="[background:linear-gradient(144deg,#2b9178,#4bc36d_50%,#64aaa9)] dark:text-white px-4 py-2 rounded-md hover:opacity-40"
-                  type="button"
+        <TiltedCard
+          imageSrc="/mfscreen.png"
+          altText="muscle-flex"
+          captionText="muscleFlex"
+          containerHeight="300px"
+          containerWidth="350px"
+          imageHeight="300px"
+          imageWidth="350px"
+          rotateAmplitude={16}
+          scaleOnHover={1.2}
+          showMobileWarning={false}
+          showTooltip={true}
+          displayOverlayContent={true}
+          overlayContent={
+            <div className="px-5 pt-2 flex flex-col">
+              <ProjectsInfo
+                name="muscleFlex"
+                stack="typescript, next js, tailwind, groq AI"
+              />
+              <div className="flex justify-evenly">
+                <ProjectsButton
+                  link={"https://github.com/VeljkoRikalovic/muscleFlex"}
                 >
                   Github
-                </button>
-              </a>
-              <a href="https://muscle-flex.vercel.app/" target="_blank">
-                <button
-                  className="[background:linear-gradient(144deg,#2b9178,#4bc36d_50%,#64aaa9)] dark:text-white px-4 py-2 rounded-md hover:opacity-40"
-                  type="button"
-                >
+                </ProjectsButton>
+                <ProjectsButton link={"https://muscle-flex.vercel.app/"}>
                   {t("visit")}
-                </button>
-              </a>
+                </ProjectsButton>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="transform transition duration-300 hover:scale-110 rounded-lg h-[30rem] sm:h-96 w-64 bg-secondary hover:shadow-none shadow-[0px_0px_8px_10px_rgba(75,195,109,0.45)] hover:-rotate-0  -rotate-12 hover:z-10">
-          <div className="m-2 h-3/6 rounded-lg relative">
-            <Image src="/twoscreen.png" fill alt="background" sizes="100%" />
-          </div>
-
-          <div className="px-5 pt-2 flex flex-col">
-            <h2 className="sm:text-3xl text-xl font-bold">The wild oasis</h2>
-            <p className="dark:text-gray-300">
-              <span className="font-semibold">{t("Tech stack")}:</span> react
-              query, react hook form, supabese, styled components
-            </p>
-
-            <div className="flex justify-evenly">
-              <a
-                href="https://github.com/VeljkoRikalovic/the-wild-oasis"
-                target="_blank"
-              >
-                <button
-                  className="[background:linear-gradient(144deg,#2b9178,#4bc36d_50%,#64aaa9)] dark:text-white px-4 py-2 rounded-md hover:opacity-40"
-                  type="button"
+          }
+        />
+        <TiltedCard
+          imageSrc="/frpscreen.png"
+          altText="Fast react pizza"
+          captionText="Fast react pizza"
+          containerHeight="300px"
+          containerWidth="350px"
+          imageHeight="300px"
+          imageWidth="350px"
+          rotateAmplitude={16}
+          scaleOnHover={1.2}
+          showMobileWarning={false}
+          showTooltip={true}
+          displayOverlayContent={true}
+          overlayContent={
+            <div className="px-5 pt-2 flex flex-col">
+              <ProjectsInfo
+                name="Fast react pizza"
+                stack="react router dom, react router form and tailwind"
+              />
+              <div className="flex justify-evenly">
+                <ProjectsButton
+                  link={"https://github.com/VeljkoRikalovic/fast-react-pizza"}
                 >
                   Github
-                </button>
-              </a>
-              <a
-                href="https://the-wild-oasis-veljkorikalovic.netlify.app"
-                target="_blank"
-              >
-                <button
-                  className="[background:linear-gradient(144deg,#2b9178,#4bc36d_50%,#64aaa9)] dark:text-white px-4 py-2 rounded-md hover:opacity-40"
-                  type="button"
+                </ProjectsButton>
+                <ProjectsButton
+                  link={"https://fast-react-pizza-veljkorikalovic.netlify.app/"}
                 >
                   {t("visit")}
-                </button>
-              </a>
+                </ProjectsButton>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="transform transition duration-300 hover:scale-110 rounded-lg h-[30rem] sm:h-96 w-64 bg-secondary hover:shadow-none shadow-[0px_0px_8px_10px_rgba(75,195,109,0.45)] hover:-rotate-0  -rotate-12">
-          <div className="m-2 h-3/6 rounded-lg relative">
-            <Image src="/twowscreen.png" fill alt="background" sizes="100%" />
-          </div>
-
-          <div className="px-5 pt-2 flex flex-col">
-            <h2 className="sm:text-3xl text-xl font-bold">
-              The wild oasis website
-            </h2>
-            <p className="dark:text-gray-300">
-              <span className="font-semibold">{t("Tech stack")}:</span> next js,
-              tailwind
-            </p>
-
-            <div className="flex justify-evenly">
-              <a
-                href="https://github.com/VeljkoRikalovic/the-wild-oasis-website"
-                target="_blank"
-              >
-                <button
-                  className="[background:linear-gradient(144deg,#4bc36d,#2b9178_50%,#64aaa9)] dark:text-white px-4 py-2  rounded-md hover:opacity-40"
-                  type="button"
+          }
+        />
+        <TiltedCard
+          imageSrc="/twowscreen.png"
+          altText="The wild oasis website"
+          captionText="The wild oasis website"
+          containerHeight="300px"
+          containerWidth="350px"
+          imageHeight="300px"
+          imageWidth="350px"
+          rotateAmplitude={16}
+          scaleOnHover={1.2}
+          showMobileWarning={false}
+          showTooltip={true}
+          displayOverlayContent={true}
+          overlayContent={
+            <div className="px-5 pt-2 flex flex-col">
+              <ProjectsInfo
+                name="The wild oasis website"
+                stack="next js, tailwind"
+              />
+              <div className="flex justify-evenly">
+                <ProjectsButton
+                  link={
+                    "https://github.com/VeljkoRikalovic/the-wild-oasis-website"
+                  }
                 >
                   Github
-                </button>
-              </a>
-              <a
-                href="https://the-wild-oasis-website-gamma-gilt.vercel.app"
-                target="_blank"
-              >
-                <button
-                  className="[background:linear-gradient(144deg,#2b9178,#4bc36d_50%,#64aaa9)] dark:text-white px-4 py-2 rounded-md hover:opacity-40"
-                  type="button"
+                </ProjectsButton>
+                <ProjectsButton
+                  link={"https://the-wild-oasis-website-gamma-gilt.vercel.app"}
                 >
                   {t("visit")}
-                </button>
-              </a>
+                </ProjectsButton>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="transform transition duration-300 hover:scale-110 rounded-lg h-[30rem] sm:h-96 w-64 hover:shadow-none bg-secondary shadow-[0px_0px_8px_10px_rgba(75,195,109,0.45)] hover:-rotate-0  -rotate-12">
-          <div className="m-2 h-3/6 rounded-lg relative">
-            <Image src="/hgscreen.png" fill alt="background" sizes="100%" />
-          </div>
-
-          <div className="px-5 pt-2 flex flex-col">
-            <h2 className="sm:text-3xl text-xl font-bold">
-              History or Geography quiz
-            </h2>
-            <p className="dark:text-gray-300">
-              <span className="font-semibold">{t("Tech stack")}:</span>{" "}
-              typescript, redux, tailwind
-            </p>
-
-            <div className="flex justify-evenly">
-              <a
-                href="https://github.com/VeljkoRikalovic/history-or-geography-quiz"
-                target="_blank"
-              >
-                <button
-                  className="[background:linear-gradient(144deg,#2b9178,#4bc36d_50%,#64aaa9)] dark:text-white px-4 py-2 rounded-md hover:opacity-40"
-                  type="button"
+          }
+        />
+        <TiltedCard
+          imageSrc="/hgscreen.png"
+          altText="History or Geography quiz"
+          captionText="History or Geography quiz"
+          containerHeight="300px"
+          containerWidth="350px"
+          imageHeight="300px"
+          imageWidth="350px"
+          rotateAmplitude={16}
+          scaleOnHover={1.2}
+          showMobileWarning={false}
+          showTooltip={true}
+          displayOverlayContent={true}
+          overlayContent={
+            <div className="px-5 pt-2 flex flex-col">
+              <ProjectsInfo
+                name="History or Geography quiz"
+                stack="typescript, next js, tailwind, groq AI"
+              />
+              <div className="flex justify-evenly">
+                <ProjectsButton
+                  link={
+                    "https://github.com/VeljkoRikalovic/history-or-geography-quiz"
+                  }
                 >
                   Github
-                </button>
-              </a>
-              <a
-                href="https://history-or-geography-quiz-vrikalovic.netlify.app/"
-                target="_blank"
-              >
-                <button
-                  className="[background:linear-gradient(144deg,#2b9178,#4bc36d_50%,#64aaa9)] dark:text-white px-4 py-2 rounded-md hover:opacity-40"
-                  type="button"
+                </ProjectsButton>
+                <ProjectsButton
+                  link={
+                    "https://history-or-geography-quiz-vrikalovic.netlify.app/"
+                  }
                 >
                   {t("visit")}
-                </button>
-              </a>
+                </ProjectsButton>
+              </div>
             </div>
-          </div>
-        </div>
+          }
+        />
       </div>
     </div>
   );
