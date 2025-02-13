@@ -6,10 +6,13 @@ import ProjectsInfo from "./ProjectsInfo";
 
 function Projects() {
   const t = useTranslations();
+
+  const width = window.innerWidth;
+
   return (
     <div
       id="projects"
-      className="flex flex-col gap-40 min-h-screen px-20 py-16 "
+      className="flex flex-col gap-40 min-h-screen px-10 sm:px-20 py-16 "
     >
       <div>
         <h1 className="text-4xl underline underline-offset-8 decoration-secondary ">
@@ -17,15 +20,15 @@ function Projects() {
         </h1>
         <p className="pt-8 text-lg">{t("Projects description")}</p>
       </div>
-      <div className="flex gap-14 flex-wrap w-full px-5">
+      <div className="flex gap-14 flex-wrap w-full items-center px-5">
         <TiltedCard
           imageSrc="/mfscreen.png"
           altText="muscle-flex"
           captionText="muscleFlex"
           containerHeight="300px"
-          containerWidth="350px"
+          containerWidth={width < 600 ? "180px" : "350px"}
           imageHeight="300px"
-          imageWidth="350px"
+          imageWidth={width < 600 ? "180px" : "350px"}
           rotateAmplitude={16}
           scaleOnHover={1.2}
           showMobileWarning={false}
@@ -37,7 +40,7 @@ function Projects() {
                 name="muscleFlex"
                 stack="typescript, next js, tailwind, groq AI"
               />
-              <div className="flex justify-evenly">
+              <div className="flex gap-2 sm:justify-evenly">
                 <ProjectsButton
                   link={"https://github.com/VeljkoRikalovic/muscleFlex"}
                 >
@@ -55,9 +58,9 @@ function Projects() {
           altText="Fast react pizza"
           captionText="Fast react pizza"
           containerHeight="300px"
-          containerWidth="350px"
+          containerWidth={width < 600 ? "180px" : "350px"}
           imageHeight="300px"
-          imageWidth="350px"
+          imageWidth={width < 600 ? "180px" : "350px"}
           rotateAmplitude={16}
           scaleOnHover={1.2}
           showMobileWarning={false}
@@ -69,7 +72,7 @@ function Projects() {
                 name="Fast react pizza"
                 stack="react router dom, react router form and tailwind"
               />
-              <div className="flex justify-evenly">
+              <div className="flex gap-2 sm:justify-evenly">
                 <ProjectsButton
                   link={"https://github.com/VeljkoRikalovic/fast-react-pizza"}
                 >
@@ -89,9 +92,9 @@ function Projects() {
           altText="The wild oasis website"
           captionText="The wild oasis website"
           containerHeight="300px"
-          containerWidth="350px"
+          containerWidth={width < 600 ? "180px" : "350px"}
           imageHeight="300px"
-          imageWidth="350px"
+          imageWidth={width < 600 ? "180px" : "350px"}
           rotateAmplitude={16}
           scaleOnHover={1.2}
           showMobileWarning={false}
@@ -103,7 +106,7 @@ function Projects() {
                 name="The wild oasis website"
                 stack="next js, tailwind"
               />
-              <div className="flex justify-evenly">
+              <div className="flex gap-2 sm:justify-evenly">
                 <ProjectsButton
                   link={
                     "https://github.com/VeljkoRikalovic/the-wild-oasis-website"
@@ -125,9 +128,9 @@ function Projects() {
           altText="History or Geography quiz"
           captionText="History or Geography quiz"
           containerHeight="300px"
-          containerWidth="350px"
+          containerWidth={width < 600 ? "180px" : "350px"}
           imageHeight="300px"
-          imageWidth="350px"
+          imageWidth={width < 600 ? "180px" : "350px"}
           rotateAmplitude={16}
           scaleOnHover={1.2}
           showMobileWarning={false}
@@ -139,7 +142,7 @@ function Projects() {
                 name="History or Geography quiz"
                 stack="typescript, next js, tailwind, groq AI"
               />
-              <div className="flex justify-evenly">
+              <div className="flex gap-2 sm:justify-evenly">
                 <ProjectsButton
                   link={
                     "https://github.com/VeljkoRikalovic/history-or-geography-quiz"

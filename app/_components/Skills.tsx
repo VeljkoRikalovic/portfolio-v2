@@ -17,7 +17,7 @@ function Skills() {
         <li>Javascript</li>
         <li>Typescript</li>
         <li>React</li>
-        <li>Redux</li>
+        <li>React Native</li>
         <li>Next js</li>
         <li>Git</li>
       </ul>

@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Skills from "./Skills";
 import { useTranslations } from "next-intl";
+import LetterGlitch from "./LetterGlitch/LetterGlitch";
 
 function About() {
   const t = useTranslations();
@@ -19,13 +19,13 @@ function About() {
         <p className="text-lg">{t("About description")}</p>
       </div>
       <Skills />
-      <div className="relative aspect-square sm:w-[80%]">
-        <Image
-          src="/setup.png"
-          className="object-cover contrast-200"
-          alt="setup"
-          fill
-          sizes="100%"
+      <div className="sm:w-[80%] py-12 h-3/5">
+        <LetterGlitch
+          glitchColors={["#2b9178", "#4bc36d", "#64aaa9"]}
+          glitchSpeed={50}
+          centerVignette={false}
+          outerVignette={true}
+          smooth={true}
         />
       </div>
     </div>

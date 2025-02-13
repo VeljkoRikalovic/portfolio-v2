@@ -14,7 +14,7 @@ function Navigation() {
   }, []);
 
   return (
-    <div className="navbar sticky top-0 z-10 bg-transparent">
+    <div className="navbar sticky px-10 top-0 z-10 bg-transparent w-full">
       <div className="navbar-start">
         <div className="dropdown">
           <div
