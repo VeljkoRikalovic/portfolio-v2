@@ -9,9 +9,12 @@ function Navigation() {
   const t = useTranslations();
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
-  useEffect(function () {
-    setTheme("dark");
-  }, []);
+  useEffect(
+    function () {
+      setTheme("dark");
+    },
+    [setTheme]
+  );
 
   return (
     <div className="navbar sticky px-10 top-0 z-10 bg-transparent w-full">
