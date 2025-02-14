@@ -34,7 +34,7 @@ export default function RootLayout(props: Props) {
     <html lang={locale} suppressHydrationWarning>
       <head />
       <body
-        className={`${roboto.className} antialiased text-background dark:text-text bg-slate-200 dark:bg-black min-h-screen`}
+        className={`${roboto.className} antialiased text-background dark:text-text bg-slate-300 dark:bg-black min-h-screen`}
       >
         {messages ? (
           <NextIntlClientProvider locale={locale} messages={messages}>

@@ -24,7 +24,7 @@ function About() {
           glitchColors={["#2b9178", "#4bc36d", "#64aaa9"]}
           glitchSpeed={50}
           centerVignette={false}
-          outerVignette={true}
+          outerVignette={false}
           smooth={true}
         />
       </div>
