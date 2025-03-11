@@ -20,7 +20,11 @@ function Hero() {
             <div className="py-2 text-background dark:text-text ">
               <Typewriter
                 options={{
-                  strings: ["Veljko Rikalović", "Frontend Developer"],
+                  strings: [
+                    "Veljko Rikalović",
+                    "Mobile Developer",
+                    "Full Stack Developer",
+                  ],
                   autoStart: true,
                   loop: true,
                 }}

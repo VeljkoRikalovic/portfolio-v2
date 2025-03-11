@@ -16,6 +16,9 @@ function Skills() {
         <li>Styled Components</li>
         <li>Javascript</li>
         <li>Typescript</li>
+        <li>Node js</li>
+        <li>Express js</li>
+        <li>MongoDB</li>
         <li>React</li>
         <li>React Native</li>
         <li>Next js</li>
