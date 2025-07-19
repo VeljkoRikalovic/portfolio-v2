@@ -11,7 +11,7 @@ function Hero() {
   if (pathname == "/rs") currentLng = "Veljko_Rikalovic_CV_SR.pdf";
 
   return (
-    <div className="min-h-screen px-20 py-12 mt-20">
+    <div className="min-h-screen px-4 py-12 lg:px-20 mt-20">
       <div className="flex sm:flex-row flex-col gap-12">
         <div className="w-3/4">
           <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-primary to-text bg-clip-text text-transparent">
@@ -31,9 +31,11 @@ function Hero() {
               />
             </div>
           </h1>
-          <p className="py-12">{t("description")}</p>
+          <p className="sm:py-12 text-lg lg:text-xl px-0 py-0">
+            {t("description")}
+          </p>
           <a href={`/${currentLng}`} download={currentLng}>
-            <button className="[background:linear-gradient(144deg,#4bc36d,#2b9178_50%,#64aaa9)]  px-4 py-2 font-semibold rounded-md hover:opacity-80">
+            <button className="[background:linear-gradient(144deg,#4bc36d,#2b9178_50%,#64aaa9)] h-12  px-4 py-2 font-semibold rounded-md hover:opacity-80 mt-4">
               {t("cv")} CV
             </button>
           </a>

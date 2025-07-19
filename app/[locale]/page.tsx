@@ -13,7 +13,7 @@ export default function Home() {
       <About />
       <Projects />
       <Contact />
-      <SplashCursor SPLAT_RADIUS={0.01} SPLAT_FORCE={0.1} />
+      <SplashCursor SPLAT_RADIUS={0.009} SPLAT_FORCE={0.1} />
     </div>
   );
 }

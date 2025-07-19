@@ -43,11 +43,14 @@ function Contact() {
   return (
     <div
       id="contact"
-      className="flex sm:flex-row flex-col gap-10 px-20 py-12 min-h-screen"
+      className="flex sm:flex-row flex-col gap-10 px-4 py-12 lg:px-20 min-h-screen"
     >
       <div className="sm:w-2/4 w-full py-20 flex flex-col gap-8">
-        <h1 className="text-3xl ">{t("connect")}</h1>
-        <p className="">{t("connect description")}</p>
+        <h1 className="text-3xl lg:text-4xl font-bold mb-8 lg:mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent relative">
+          {t("connect")}
+          <div className="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+        </h1>
+        <p className="text-lg lg:text-xl">{t("connect description")}</p>
         <div>
           <div className="flex items-center gap-4">
             <div className="social-button">
