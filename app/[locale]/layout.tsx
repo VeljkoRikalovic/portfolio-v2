@@ -1,12 +1,10 @@
 "use client";
 import "../globals.css";
-import { Roboto } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import { Providers } from "../_providers/Providers";
 import { useEffect, useState } from "react";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-
-const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
 type Props = {
   children: React.ReactNode;
@@ -34,7 +32,7 @@ export default function RootLayout(props: Props) {
     <html lang={locale} suppressHydrationWarning>
       <head />
       <body
-        className={`${roboto.className} antialiased text-background dark:text-text bg-slate-300 dark:bg-black min-h-screen`}
+        className={`${GeistSans.variable} font-sans antialiased text-neutral-900 dark:text-text bg-white dark:bg-background min-h-screen`}
       >
         {messages ? (
           <NextIntlClientProvider locale={locale} messages={messages}>

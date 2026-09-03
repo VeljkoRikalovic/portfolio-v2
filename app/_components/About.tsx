@@ -1,6 +1,6 @@
 "use client";
 
-import Skills from "./Skills";
+import TechStack from "./TechStack";
 import { useTranslations } from "next-intl";
 
 function About() {
@@ -22,9 +22,9 @@ function About() {
         </p>
       </div>
 
-      {/* Skills Section */}
+      {/* Tech Stack Section */}
       <div>
-        <Skills />
+        <TechStack />
       </div>
     </div>
   );

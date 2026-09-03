@@ -6,11 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 
-[data-theme="dark"] {
-  color: #fff;
-  background: #000;
-}
-[data-theme="light"] {
-  color: #000;
-  background: #fff;
+::selection {
+  background-color: #4bc36d;
+  color: #050705;
 }

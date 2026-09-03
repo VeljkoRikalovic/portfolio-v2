@@ -9,6 +9,9 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial":
           "radial-gradient(farthest-corner at 99% 0% in lab, ##030302 0%, #384c3a 47%);",
@@ -17,7 +20,9 @@ const config: Config = {
       },
       colors: {
         text: "#e9fcee",
-        background: "#010402",
+        background: "#050705",
+        surface: "#0d110e",
+        muted: "#93a39a",
         primary: "#4bc36d",
         secondary: "#2b9178",
         accent: "#64aaa9",
