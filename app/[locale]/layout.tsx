@@ -1,6 +1,7 @@
 "use client";
 import "../globals.css";
 import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { Providers } from "../_providers/Providers";
 import { useEffect, useState } from "react";
 import { notFound } from "next/navigation";
@@ -32,7 +33,7 @@ export default function RootLayout(props: Props) {
     <html lang={locale} suppressHydrationWarning>
       <head />
       <body
-        className={`${GeistSans.variable} font-sans antialiased text-neutral-900 dark:text-text bg-white dark:bg-background min-h-screen`}
+        className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased text-neutral-900 dark:text-text bg-white dark:bg-background min-h-screen`}
       >
         {messages ? (
           <NextIntlClientProvider locale={locale} messages={messages}>

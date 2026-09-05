@@ -2,21 +2,21 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import { FiArrowRight, FiDownload } from "react-icons/fi";
+import TerminalWindow from "./TerminalWindow";
 
 const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
+      staggerChildren: 0.1,
+      delayChildren: 0.05,
     },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
 function Hero() {
@@ -30,73 +30,66 @@ function Hero() {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center overflow-hidden px-4 py-32 lg:px-20">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 right-0 h-[32rem] w-[32rem] rounded-full bg-primary/20 blur-[120px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-0 left-0 h-96 w-96 rounded-full bg-accent/10 blur-[100px]"
-      />
+    <div className="px-4 py-24 lg:px-20 lg:py-32">
+      <div className="grid gap-16 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+        <motion.div variants={container} initial="hidden" animate="show">
+          <motion.p
+            variants={item}
+            className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-primary"
+          >
+            {t("heroKicker")}
+          </motion.p>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="relative z-10 max-w-3xl"
-      >
+          <motion.h1
+            variants={item}
+            className="mt-5 text-4xl font-semibold leading-[1.15] tracking-tight text-neutral-900 dark:text-text sm:text-5xl"
+          >
+            <span className="block text-neutral-500 dark:text-muted">
+              {t("heroHeadlineIntro")}
+            </span>
+            <span className="block">{t("heroHeadlineMain")}</span>
+          </motion.h1>
+
+          <motion.p
+            variants={item}
+            className="mt-6 max-w-lg text-base text-neutral-600 dark:text-muted sm:text-lg"
+          >
+            {t("heroSubheadline")}
+          </motion.p>
+
+          <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-4">
+            <button
+              onClick={() => scrollTo("projects")}
+              className="rounded-md bg-primary px-6 py-3 text-sm font-semibold text-background transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              {t("viewWork")}
+            </button>
+
+            <a
+              href={`/${cvFile}`}
+              download={cvFile}
+              className="rounded-md border border-neutral-300 dark:border-white/20 px-6 py-3 text-sm font-semibold text-neutral-900 dark:text-text transition-colors duration-200 hover:border-primary/60 hover:text-primary"
+            >
+              {t("downloadCv")}
+            </a>
+
+            <button
+              onClick={() => scrollTo("contact")}
+              className="text-sm font-medium text-neutral-500 dark:text-muted underline underline-offset-4 decoration-neutral-300 dark:decoration-white/20 transition-colors duration-200 hover:text-primary hover:decoration-primary"
+            >
+              {t("getInTouch")}
+            </button>
+          </motion.div>
+        </motion.div>
+
         <motion.div
-          variants={item}
-          className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 text-sm text-primary mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-          {t("heroBadge")}
+          <TerminalWindow />
         </motion.div>
-
-        <motion.h1
-          variants={item}
-          className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight text-neutral-900 dark:text-text"
-        >
-          {t("heroHeadlinePrefix")}{" "}
-          <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            {t("heroHeadlineHighlight")}
-          </span>
-        </motion.h1>
-
-        <motion.p
-          variants={item}
-          className="mt-6 max-w-xl text-lg text-neutral-600 dark:text-muted leading-relaxed"
-        >
-          {t("heroSubheadline")}
-        </motion.p>
-
-        <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-4">
-          <button
-            onClick={() => scrollTo("projects")}
-            className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-primary to-secondary px-6 py-3 font-medium text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/30"
-          >
-            {t("viewWork")}
-            <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-
-          <button
-            onClick={() => scrollTo("contact")}
-            className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 dark:border-white/15 px-6 py-3 font-medium text-neutral-900 dark:text-text transition-colors duration-300 hover:border-primary/50 hover:bg-primary/5"
-          >
-            {t("getInTouch")}
-          </button>
-
-          <a
-            href={`/${cvFile}`}
-            download={cvFile}
-            className="inline-flex items-center gap-2 px-2 py-3 font-medium text-neutral-600 dark:text-muted transition-colors duration-300 hover:text-primary"
-          >
-            <FiDownload />
-            {t("downloadCv")}
-          </a>
-        </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }
